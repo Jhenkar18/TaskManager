@@ -1,0 +1,9 @@
+
+Project Documentation Overview
+
+-> BUilt Task Management App using MERN Stack (MongoDB,Express,React,Node).
+-> For frontend i have used React and Tailwind css.
+-> Backend Node.js and Express.js
+-> Database i have used MongoDb and Hosted in MongoAtlas
+-> Implemented Authentication using JWT Tokens.
+-> And all other Functionalities Mentioned in the Requirement.
