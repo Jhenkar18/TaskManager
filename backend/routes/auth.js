@@ -1,20 +1,47 @@
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 
-const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers["authorization"];
+// const authenticateToken = (req, res, next) => {
+//   const authHeader = req.headers["authorization"];
+//   const token = authHeader && authHeader.split(" ")[1];
+
+//   if (token == null) {
+//     return res.status(401).json({ message: "Authentication token required" });
+//   }
+
+//   jwt.verify(token, "tcmTM", (err, user) => {
+//     if (err) {
+//       return res.status(403).json(err);
+//     }
+//     req.user = user;
+//     next();
+//   });
+// };
+
+// module.exports = { authenticateToken };
+
+
+const jwt = require('jsonwebtoken');
+
+const authenticateToken = (req,res,next)=>{
+
+  const authHeader= req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
 
-  if (token == null) {
-    return res.status(401).json({ message: "Authentication token required" });
+  if(token == null){
+
+    return res.status(401).jsono({Message :"Authentication Token Required"})
   }
 
-  jwt.verify(token, "tcmTM", (err, user) => {
-    if (err) {
-      return res.status(403).json(err);
-    }
-    req.user = user;
-    next();
-  });
-};
+  jwt.verify(token,"tcnTM",(err,user)=>{
 
-module.exports = { authenticateToken };
+    if(err){
+      return res.status(403).json(err)
+    }
+
+    req.user=user;
+    next();
+
+  })
+}
+
+module.exports={authenticateToken};
