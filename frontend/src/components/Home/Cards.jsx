@@ -19,7 +19,9 @@ const Cards = ({ home, setInputDiv, data, setUpdatedData }) => {
         { headers }
       );
     } catch (error) {
-      console.log(error);
+     // console.log(error);
+     console.log("error");
+     
     }
   };
   const handleImportant = async (id) => {
